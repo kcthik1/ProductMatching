@@ -1,0 +1,28 @@
+# Model parameters
+model:
+  name: "NutritionLabelCRNN"
+  cnn_output_channels: 512
+  rnn_hidden_size: 256
+  rnn_num_layers: 2
+  num_classes: 95  # 10 digits + 26 lowercase + 26 uppercase + 32 special characters + 1 blank
+
+# Training parameters
+training:
+  batch_size: 64
+  num_epochs: 50
+  learning_rate: 0.001
+  weight_decay: 0.0001
+
+# Data parameters
+data:
+  train_dir: "data/train"
+  val_dir: "data/val"
+  test_dir: "data/test"
+  image_height: 32
+  image_width: 256
+  charset: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+
+# Paths
+paths:
+  model_save_path: "saved_models/nutrition_label_crnn.pth"
+  log_dir: "logs"
